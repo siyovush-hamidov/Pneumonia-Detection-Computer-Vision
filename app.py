@@ -7,7 +7,7 @@ import numpy as np
 from matplotlib.patches import Rectangle
 from keras.models import load_model
 
-NeuralNetwork = load_model('D:\Desktop\PneumoniaClassification/PneuClass(90%).h5')
+NeuralNetwork = load_model('PneuClass(90%).h5')
 img_size = 150
   
 
