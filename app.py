@@ -38,8 +38,7 @@ def predict(name):
         if FloatNumber > 60:
           st.markdown(f"<h5 style='text-align: center; color: white;'>Обнаружены признаки пневмонии. Вероятность наличия составляет {ANS}%</h5>", unsafe_allow_html=True)
         else:
-          st.markdown(f"<h5 style='text-align: center; color: white;'>Признаков заболевания не обнаружено. Вероятность наличия составляет {ANS}%</h5>", unsafe_allow_html=True)
-  
+           st.markdown("<h4 style='text-align: center; color: white;'>Признаков заболевания не обнаружено.</h4>", f"<h5 style='text-align: center; color: white;'>Вероятность наличия составляет {ANS}%</h5>", unsafe_allow_html=True)
 
         
 
