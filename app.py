@@ -53,27 +53,27 @@ def main():
   col2.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью')
 
   # Скрытые кнопки для имитации нажатий на изображения
-    image_clicked = st.empty()
+  image_clicked = st.empty()
 
     # Отображение изображений с условным вызовом predict()
-    if image_clicked == 'Healthy.jpg':
-        predict('Healthy.jpg')
+  if image_clicked == 'Healthy.jpg':
+      predict('Healthy.jpg')
         st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
-    elif image_clicked == 'Pneumonia.jpeg':
-        predict('Pneumonia.jpeg')
-        st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
-    else:
-        st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
-        st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
+  elif image_clicked == 'Pneumonia.jpeg':
+      predict('Pneumonia.jpeg')
+      st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
+  else:
+      st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
+      st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
 
     # Обработчик нажатия на кнопку
-    if st.button('Выбрать Healthy.jpg'):
-        image_clicked.text = 'Healthy.jpg'
-    if st.button('Выбрать Pneumonia.jpeg'):
-        image_clicked.text = 'Pneumonia.jpeg'
+  if st.button('Выбрать Healthy.jpg'):
+      image_clicked.text = 'Healthy.jpg'
+  if st.button('Выбрать Pneumonia.jpeg'):
+      image_clicked.text = 'Pneumonia.jpeg'
 
   if image:
-        predict('image')
+      predict('image')
 
   
 
