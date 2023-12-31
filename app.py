@@ -72,9 +72,9 @@ def main():
   if st.button('Выбрать Pneumonia.jpeg'):
       image_clicked.text = 'Pneumonia.jpeg'
 
-  if image:
-      predict('image')
-
+  if image_clicked.text:
+      predict(image_clicked.text)
+  predict('image')
   
 
 if __name__ == "__main__":
