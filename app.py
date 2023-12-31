@@ -11,8 +11,7 @@ NeuralNetwork = load_model('PneuClass(90%).h5')
 img_size = 150
   
 
-def predict(name):
-    image = st.file_uploader("Загрузите фотографию " + name, type=["png", "jpg", "jpeg"], )
+def predict(name, image):
     if image:
         st.image(image=image)
         im = Image.open(image)
@@ -52,32 +51,32 @@ def main():
   col1.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента')
   col2.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью')
 
-  # Скрытые кнопки для имитации нажатий на изображения
-  image_clicked = st.empty()
+  # # Скрытые кнопки для имитации нажатий на изображения
+  # image_clicked = st.empty()
 
-    # Отображение изображений с условным вызовом predict()
-  if image_clicked == 'Healthy.jpg':
-      predict('Healthy.jpg')
-      # st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
-  elif image_clicked == 'Pneumonia.jpeg':
-      predict('Pneumonia.jpeg')
-      # st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
-  # else:
-      # st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
-      # st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
+  #   # Отображение изображений с условным вызовом predict()
+  # if image_clicked == 'Healthy.jpg':
+  #     predict('Healthy.jpg')
+  #     # st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
+  # elif image_clicked == 'Pneumonia.jpeg':
+  #     predict('Pneumonia.jpeg')
+  #     # st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
+  # # else:
+  #     # st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
+  #     # st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
 
     # Обработчик нажатия на кнопку
   if st.button('Выбрать Healthy.jpg'):
-      image_clicked.text = 'Healthy.jpg'
+      image = 'Healthy.jpg'
   if st.button('Выбрать Pneumonia.jpeg'):
-      image_clicked.text = 'Pneumonia.jpeg'
+      image = 'Pneumonia.jpeg'
 
   image = st.file_uploader("Загрузите фотографию", type=["png", "jpg", "jpeg"])
   if image:
     image_name = image.name  # Сохраните имя файла
 # Вызов predict() только после обработки событий и наличия загруженного изображения
   if image:
-    predict(image.name)  # Передаем имя загруженного файла  
+    predict(image.name, image)  # Передаем имя загруженного файла  
 
 if __name__ == "__main__":
   main()
