@@ -12,7 +12,7 @@ img_size = 150
   
 
 def predict(name):
-    image = st.file_uploader("Upload a file" + name, type=["png", "jpg", "jpeg"])
+    image = st.file_uploader("Загрузите фотографию" + name, type=["png", "jpg", "jpeg"], )
     if image:
         st.image(image=image)
         im = Image.open(image)
@@ -35,14 +35,15 @@ def predict(name):
         FloatNumber = (1.0 - Prediction[0][0]) * 100
         ANS = str("%.2f" % FloatNumber)
         # ANS = str("%.2f" % (1.0 - Prediction[0][0], 3) * 100)   
-        if ANS > 60:
+        if FloatNumber > 60:
           st.header('Пневмония обнаружена\n');
           st.header('Вероятность наличия составляет ' + ANS + '%')
 
         
 
 def main():
-  st.set_page_config(page_title='Диагностирование Пневмонии', page_icon=None, initial_sidebar_state='auto')
+  st.markdown("<h2 style='text-align: center; color: white;'>Модель машинного обучения для диагностирования бактериальной или вирусной пневмонии</h2>", unsafe_allow_html=True)
+  st.image('https://th.bing.com/th/id/OIG.N.VeSzaC2cX.4Lmg.8Rm?w=1024&h=1024&rs=1&pid=ImgDetMain', caption='“Здоровье до того перевешивает все остальные блага жизни, что поистине здоровый нищий счастливее больного короля. —Артур Шопенгауэр”', use_column_width=True)
   st.title('Диагностирование бактериальной и вирусной пневмонии')
   predict('image')
 
