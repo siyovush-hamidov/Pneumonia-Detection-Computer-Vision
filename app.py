@@ -58,13 +58,13 @@ def main():
     # Отображение изображений с условным вызовом predict()
   if image_clicked == 'Healthy.jpg':
       predict('Healthy.jpg')
-      st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
+      # st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
   elif image_clicked == 'Pneumonia.jpeg':
       predict('Pneumonia.jpeg')
-      st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
+      # st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
   else:
-      st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
-      st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
+      # st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
+      # st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
 
     # Обработчик нажатия на кнопку
   if st.button('Выбрать Healthy.jpg'):
