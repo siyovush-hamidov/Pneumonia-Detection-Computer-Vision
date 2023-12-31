@@ -48,8 +48,8 @@ def main():
   st.markdown("<h2 style='text-align: center; color: white;'>Модель машинного обучения для диагностирования бактериальной и вирусной пневмонии</h2>", unsafe_allow_html=True)
   st.image('https://th.bing.com/th/id/OIG.N.VeSzaC2cX.4Lmg.8Rm?w=1024&h=1024&rs=1&pid=ImgDetMain', caption='“Здоровье до того перевешивает все остальные блага жизни, что поистине здоровый нищий счастливее больного короля. —Артур Шопенгауэр”', use_column_width=True)
   st.markdown("<h3 style='text-align: center; color: white;'>Как работает модель?</h3>", unsafe_allow_html=True)
-  st.markdown("<h5 style='text-align: center; color: white;'>Пользователь должен ввести в качестве входных данных снимок рентгена (на практике - dicom-файл), программа обрабатывает полученную фотографию и выводит результат в виде диагноза: положительный диагноз либо отрицательный.</h5>", unsafe_allow_html=True)
-  st.markdown("<h5 style='text-align: center; color: white;'>Загрузите фотографию, чтобы передать её модели искусственного интеллекта</h5>", unsafe_allow_html=True)
+  st.markdown("<h6 style='text-align: center; color: white;'>Пользователь должен ввести в качестве входных данных снимок рентгена (на практике - dicom-файл), программа обрабатывает полученную фотографию и выводит результат в виде диагноза: положительный диагноз либо отрицательный.</h6>", unsafe_allow_html=True)
+  st.markdown("<h6 style='text-align: center; color: white;'>Загрузите фотографию, чтобы передать её модели искусственного интеллекта</h6>", unsafe_allow_html=True)
   # Отображение изображений в две колонки
   col1, col2 = st.columns(2)
   col1.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента')
