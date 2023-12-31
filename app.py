@@ -34,8 +34,10 @@ def predict(name):
         Prediction = NeuralNetwork.predict(SamplePhotoXTrain)
         FloatNumber = (1.0 - Prediction[0][0]) * 100
         ANS = str("%.2f" % FloatNumber)
-        # ANS = str("%.2f" % (1.0 - Prediction[0][0], 3) * 100)     
-        st.header('Обнаружение пневмонии: ' + ANS + '%')
+        # ANS = str("%.2f" % (1.0 - Prediction[0][0], 3) * 100)   
+        if ANS > 60:
+          st.header('Пневмония обнаружена\n');
+          st.header('Вероятность наличия составляет ' + ANS + '%')
 
         
 
