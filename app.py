@@ -44,7 +44,11 @@ def predict(name):
 def main():
   st.markdown("<h2 style='text-align: center; color: white;'>Модель машинного обучения для диагностирования бактериальной или вирусной пневмонии</h2>", unsafe_allow_html=True)
   st.image('https://th.bing.com/th/id/OIG.N.VeSzaC2cX.4Lmg.8Rm?w=1024&h=1024&rs=1&pid=ImgDetMain', caption='“Здоровье до того перевешивает все остальные блага жизни, что поистине здоровый нищий счастливее больного короля. —Артур Шопенгауэр”', use_column_width=True)
-  st.title('Диагностирование бактериальной и вирусной пневмонии')
+  st.title('Как работает программа?')
+  st.markdown("<h4 style='text-align: center; color: white;'>Пользователь должен ввести в качестве входных данных снимок рентгена (на практике - dicom-файл), программа обрабатывает полученную фотографию и выводит результат в виде диагноза: положительный диагноз либо отрицательный.</h4>", unsafe_allow_html=True)
+  st.markdown("<h3 style='text-align: center; color: white;'>Загрузите фотографию, чтобы передать её модели искусственного интеллекта</h3>", unsafe_allow_html=True)
+  st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
+  st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
   predict('image')
 
   
