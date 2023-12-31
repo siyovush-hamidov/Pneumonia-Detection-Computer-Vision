@@ -62,7 +62,7 @@ def main():
   elif image_clicked == 'Pneumonia.jpeg':
       predict('Pneumonia.jpeg')
       # st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
-  else:
+  # else:
       # st.image('Healthy.jpg', caption='Снимок грудной клетки здорового пациента', use_column_width=True)
       # st.image('Pneumonia.jpeg', caption='Снимок грудной клетки, пораженной болезнью', use_column_width=True)
 
