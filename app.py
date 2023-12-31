@@ -12,7 +12,7 @@ img_size = 150
   
 
 def predict(name):
-    image = st.file_uploader("Загрузите фотографию" + name, type=["png", "jpg", "jpeg"], )
+    image = st.file_uploader("Загрузите фотографию " + name, type=["png", "jpg", "jpeg"], )
     if image:
         st.image(image=image)
         im = Image.open(image)
@@ -72,8 +72,8 @@ def main():
   if st.button('Выбрать Pneumonia.jpeg'):
       image_clicked.text = 'Pneumonia.jpeg'
 
-  if image_clicked.text:
-      predict(image_clicked.text)
+  if image_clicked:
+      predict(image_clicked)
   predict('image')
   
 
