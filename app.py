@@ -36,10 +36,12 @@ def predict(name):
         ANS = str("%.2f" % FloatNumber)
         # ANS = str("%.2f" % (1.0 - Prediction[0][0], 3) * 100)   
         if FloatNumber > 60:
-          st.markdown(f"<h5 style='text-align: center; color: white;'>Обнаружены признаки пневмонии. Вероятность наличия составляет {ANS}%</h5>", unsafe_allow_html=True)
+          st.markdown("<h4 style='text-align: center; color: white;'>Обнаружены признаки пневмонии.</h4>", unsafe_allow_html=True)
+          st.markdown(f"<h5 style='text-align: center; color: white;'>Вероятность наличия составляет {ANS}%</h5>", unsafe_allow_html=True)
         else:
-           st.markdown("<h4 style='text-align: center; color: white;'>Признаков заболевания не обнаружено.</h4>", f"<h5 style='text-align: center; color: white;'>Вероятность наличия составляет {ANS}%</h5>", unsafe_allow_html=True)
-
+          st.markdown("<h4 style='text-align: center; color: white;'>Признаков заболевания не обнаружено.</h4>", unsafe_allow_html=True)
+          st.markdown(f"<h5 style='text-align: center; color: white;'>Вероятность наличия составляет {ANS}%</h5>", unsafe_allow_html=True)
+      
         
 
 def main():
