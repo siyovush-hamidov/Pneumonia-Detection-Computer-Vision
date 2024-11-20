@@ -54,7 +54,7 @@ def main():
     """Главная функция для отображения страницы Streamlit."""
     st.markdown("<h2 style='text-align: center; color: white;'>Модель машинного обучения для диагностирования бактериальной и вирусной пневмонии</h2>", unsafe_allow_html=True)
     st.image(
-        'https://th.bing.com/th/id/OIG.N.VeSzaC2cX.4Lmg.8Rm?w=1024&h=1024&rs=1&pid=ImgDetMain',
+        'attention.webp',
         caption='“Здоровье перевешивает все остальные блага жизни. —Артур Шопенгауэр”',
         use_column_width=True
     )
