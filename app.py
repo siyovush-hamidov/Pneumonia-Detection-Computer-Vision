@@ -6,12 +6,12 @@ from keras.models import load_model
 import os
 
 # Загрузка модели
-NeuralNetwork = load_model('PneuClass(90%).h5')
+NeuralNetwork = load_model('model/PneuClass(90%).h5')
 img_size = 150
 
 # Проверяем наличие файлов
-assert os.path.exists('Healthy.jpg'), "Файл Healthy.jpg не найден."
-assert os.path.exists('Pneumonia.jpeg'), "Файл Pneumonia.jpeg не найден."
+assert os.path.exists('xray_samples/Healthy.jpg'), "Файл Healthy.jpg не найден."
+assert os.path.exists('xray_samples/Pneumonia.jpeg'), "Файл Pneumonia.jpeg не найден."
 
 def resize_image(img_path, max_width=400):
     """Уменьшает изображение для отображения."""
@@ -54,7 +54,7 @@ def main():
     """Главная функция для отображения страницы Streamlit."""
     st.markdown("<h2 style='text-align: center; color: white;'>Модель машинного обучения для диагностирования бактериальной и вирусной пневмонии</h2>", unsafe_allow_html=True)
     st.image(
-        'attention.webp',
+        'miscellaneous/attention.webp',
         caption='“Здоровье перевешивает все остальные блага жизни. —Артур Шопенгауэр”',
         use_column_width=True
     )
@@ -63,8 +63,8 @@ def main():
     
     # Отображение изображений для примера
     col1, col2 = st.columns(2)
-    col1.image(resize_image('Healthy.jpg'), caption='Снимок грудной клетки здорового пациента')
-    col2.image(resize_image('Pneumonia.jpeg'), caption='Снимок грудной клетки, пораженной болезнью')
+    col1.image(resize_image('xray_samples/Healthy.jpg'), caption='Снимок грудной клетки здорового пациента')
+    col2.image(resize_image('xray_samples/Pneumonia.jpeg'), caption='Снимок грудной клетки, пораженной болезнью')
 
     # Загрузка и предсказание
     st.markdown("<h5 style='text-align: center; color: white;'>Загрузите снимок</h5>", unsafe_allow_html=True)
