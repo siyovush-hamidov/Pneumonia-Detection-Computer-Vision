@@ -92,13 +92,13 @@ def main():
     col1, col2 = st.columns(2)
     with col1:
         try:
-            col1.image(resize_image('xray_samples/Healthy.jpg'), caption='Синаи шахси солим')
+            col1.image(resize_image('xray_samples/Healthy.jpg'), caption='Кафаси синаи шахси солим')
         except Exception as e:
             st.error(f"Ошибка загрузки примера изображения: {str(e)}")
     
     with col2:
         try:
-            col2.image(resize_image('xray_samples/Pneumonia.jpeg'), caption='Синаи шахси бемор')
+            col2.image(resize_image('xray_samples/Pneumonia.jpeg'), caption='Кафаси синаи шахси бемор')
         except Exception as e:
             st.error(f"Ошибка загрузки примера изображения: {str(e)}")
     
