@@ -24,7 +24,7 @@ def resize_image(img_path, max_width=400):
 
 def predict(name):
     """Функция загрузки и предсказания по изображению."""
-    image = st.file_uploader("Аксро бор кунед: " + name, type=["png", "jpg", "jpeg"])
+    image = st.file_uploader("Расм бор кунед: " + name, type=["png", "jpg", "jpeg"])
     if image:
         im = Image.open(image)
         SamplePhoto = np.asarray(im)
@@ -47,7 +47,7 @@ def predict(name):
                 st.markdown("<h4 style='text-align: center; color: green;'>Аломатҳои беморӣ мушоҳида намешаванд.</h4>", unsafe_allow_html=True)
                 st.markdown(f"<h5 style='text-align: center; color: green;'>Эҳтимолияти беморӣ: {ANS}%</h5>", unsafe_allow_html=True)
 
-            st.image(image=image, caption='Аксҳои рентгении таҳлилшуда', use_column_width=True)
+            st.image(image=image, caption='Расмҳои рентгении таҳлилшуда', use_column_width=True)
 
         except Exception as e:
             st.error(f"Хатогӣ ҳангоми истифодаи модел: {str(e)}")
@@ -61,7 +61,7 @@ def main():
         use_column_width=True
     )
     st.markdown("<h3 style='text-align: center; color: white;'>Модел чӣ гуна кор мекунад?</h3>", unsafe_allow_html=True)
-    st.write("Истифодабаранда бояд акси рентгениро бор кунад ва модел натиҷаи эҳтимолияти бемориро нишон медиҳад.")
+    st.write("Истифодабаранда бояд расми рентгениро бор кунад ва модел натиҷаи эҳтимолияти бемориро нишон медиҳад.")
 
     # Намоиши мисолҳо
     col1, col2 = st.columns(2)
@@ -69,7 +69,7 @@ def main():
     col2.image(resize_image('xray_samples/Pneumonia.jpeg'), caption='Синаи шахси бемор')
 
     # Боргузорӣ ва пешгӯӣ
-    st.markdown("<h5 style='text-align: center; color: white;'>Аксро бор кунед</h5>", unsafe_allow_html=True)
+    st.markdown("<h5 style='text-align: center; color: white;'>Расмро бор кунед</h5>", unsafe_allow_html=True)
     predict('акс')  # Номи оддии тасвир барои боркунӣ
 
 if __name__ == "__main__":
